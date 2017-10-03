@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-#   def movie_params
-#     params.require(:movie).permit(:title, :rating, :description, :release_date)
-#   end
+  def user_params
+    params.require(:user).permit(:user_id, :email, :session_token)
+  end
 
 #   def show
 #     id = params[:id] # retrieve movie ID from URI route
@@ -14,15 +14,15 @@ class UsersController < ApplicationController
 #     @movies = Movie.all
 #   end
 
-#   def new
-#     # default: render 'new' template
-#   end
+  def new
+    # default: render 'new' template
+  end
 
-#   def create
-#     @movie = Movie.create!(movie_params)
-#     flash[:notice] = "#{@movie.title} was successfully created."
-#     redirect_to movies_path
-#   end
+  def create
+    @user = User.create!(user_params)
+    flash[:notice] = "#{@user.user_id} was successfully created."
+    redirect_to movies_path
+  end
 
 #   def edit
 #     @movie = Movie.find params[:id]
