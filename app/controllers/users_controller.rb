@@ -19,14 +19,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    puts(params[:user_id])
-    if (!User.exists?(params[:user_id])) 
+    user = User.create!(user_params)
+    puts(user.user_id)
+    if (!User.exists?(user.user_id)) 
         @user = User.create!(user_params)
         flash[:notice] = "#{@user.user_id} was successfully created."
     else
         flash[:notice] = "Sorry, this user-id is taken. Try again."
     end
-
     redirect_to movies_path
   end
 
