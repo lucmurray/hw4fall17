@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def create
     dummyUser = User.create!(user_params)
 
-    if (User.all.find { |user| user[:user_id] == dummyUser.user_id}.should_not_be_nil) 
+    if (User.all.include?{ |user| user[:user_id] == dummyUser.user_id}) 
       flash[:notice] = "Sorry, this user-id is taken. Try again."
     else
       @user = User.create!(user_params)
