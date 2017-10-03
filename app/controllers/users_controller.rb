@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def create
     flag = 0
     User.all.each do |user|
-        puts(user.user_id)
+        puts("hello")
         # if (user.user_id.eql?(user_params.user_id)) 
         #     flag = 1
         # end
