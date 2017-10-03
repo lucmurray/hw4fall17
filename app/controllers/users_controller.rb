@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.create!(user_params)
-    if (User.include?(user.user_id)) 
+    if (User.all.include?(user.user_id)) 
       flash[:notice] = "Sorry, this user-id is taken. Try again."
     else
       @user = User.create!(user_params)
