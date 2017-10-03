@@ -20,11 +20,12 @@ class UsersController < ApplicationController
 
   def create
     flag = 0
-    User.each do |user|
+    User.all.each do |user|
         if (user.user_id.eql?(user_params.user_id)) do
             flag = 1
         end
     end
+    
     if (flag != 1) do
         @user = User.create!(user_params)
     else
