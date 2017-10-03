@@ -19,18 +19,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # dummyUser = User.create!(user_params)
-    # userNames = Array.new
-    # User.all.each do |user|
-    #   userNames.push(user[:user_id])
-    # end
-    # puts(userNames)
-    # if (userNames.include?(dummyUser.user_id)) 
-    #   flash[:notice] = "Sorry, this user-id is taken. Try again."
-    # else
-    #   @user = User.create!(user_params)
-    #   flash[:notice] = "#{@user.user_id} was successfully created."
-    # end
     @user = User.new(user_params)
     if (User.exists?(@user.user_id))
       flash[:notice] = "Sorry, this user-id is taken. Try again."
