@@ -1,46 +1,45 @@
 class UsersController < ApplicationController
-    
-#   def user_params
-#     params.require(:user).permit(:user_id, :email, :session_token)
+
+#   def movie_params
+#     params.require(:movie).permit(:title, :rating, :description, :release_date)
 #   end
 
 #   def show
-#     user_id = params[:user_id] # retrieve user ID from URI route
-#     @user = User.find(user_id) # look up movie by unique ID
-#     # will render app/views/users/show.<extension> by default
+#     id = params[:id] # retrieve movie ID from URI route
+#     @movie = Movie.find(id) # look up movie by unique ID
+#     # will render app/views/movies/show.<extension> by default
 #   end
 
 #   def index
-#     @users = User.all
+#     @movies = Movie.all
 #   end
 
 #   def new
-#     redirect_to new_user_path
+#     # default: render 'new' template
 #   end
 
 #   def create
-#     @user = User.create!(user_params)
-#     flash[:notice] = "#{@user.user_id} was successfully created."
+#     @movie = Movie.create!(movie_params)
+#     flash[:notice] = "#{@movie.title} was successfully created."
 #     redirect_to movies_path
 #   end
 
 #   def edit
-#     @user = User.find params[:user_id]
+#     @movie = Movie.find params[:id]
 #   end
 
 #   def update
-#     @user = User.find params[:user_id]
-#     @user.update_attributes!(user_params)
-#     flash[:notice] = "#{@user.user_id} was successfully updated."
-#     redirect_to user_path(@user)
+#     @movie = Movie.find params[:id]
+#     @movie.update_attributes!(movie_params)
+#     flash[:notice] = "#{@movie.title} was successfully updated."
+#     redirect_to movie_path(@movie)
 #   end
 
 #   def destroy
-#     @movie = User.find(params[:user_id])
+#     @movie = Movie.find(params[:id])
 #     @movie.destroy
-#     flash[:notice] = "User '#{@user.user_id}' deleted."
-#     redirect_to users_path
+#     flash[:notice] = "Movie '#{@movie.title}' deleted."
+#     redirect_to movies_path
 #   end
-   
-    
+
 end
