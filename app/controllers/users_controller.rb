@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     User.all.each do |user|
       userNames.push(user[:user_id])
     end
+    puts(userNames)
     if (userNames.include?(dummyUser.user_id)) 
       flash[:notice] = "Sorry, this user-id is taken. Try again."
     else
