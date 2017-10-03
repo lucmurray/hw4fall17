@@ -19,10 +19,18 @@ class UsersController < ApplicationController
   end
 
   def create
+    flag = 0
     User.each do |user|
-        puts(user.user_id)
+        if (user.user_id.eql?(user_params.user_id)) do
+            flag = 1
+        end
     end
-    @user = User.create!(user_params)
+    if (flag != 1) do
+        @user = User.create!(user_params)
+    else
+        flash[:notice] = "Sorry, this user-id is taken. Try again."
+    end
+
     flash[:notice] = "#{@user.user_id} was successfully created."
     redirect_to movies_path
   end
