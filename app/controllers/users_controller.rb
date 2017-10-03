@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if (!User.exists?(user_id)) 
+    if (!User.exists?(params[:user_id])) 
         @user = User.create!(user_params)
         flash[:notice] = "#{@user.user_id} was successfully created."
     else
